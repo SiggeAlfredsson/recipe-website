@@ -24,6 +24,8 @@ public class Ingredient {
 
     private double quantity;
 
+    private String measure;
+
     @ManyToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;

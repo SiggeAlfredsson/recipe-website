@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+// import org.springframework.web.server.ResponseStatusException;
 
 import com.siggebig.demo.model.Recipe;
 import com.siggebig.demo.repository.RecipeRepository;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RequestMapping("/recipes")
 public class RecipeController {
     
@@ -19,8 +20,18 @@ public class RecipeController {
     private RecipeRepository recipeRepository;
     
     @GetMapping
-    public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
+    public ResponseEntity<List<Recipe>> getAllRecipes() {
+        List<Recipe> recipes = recipeRepository.findAll();
+
+
+        if(recipes.isEmpty()) {
+            return ResponseEntity
+                    .status(204)
+                    .header("x-info", "No recipes found in db")
+                    .build();
+        } else {
+            return ResponseEntity.ok(recipes);
+        }
     }
     
     @GetMapping("/{id}")
@@ -29,25 +40,16 @@ public class RecipeController {
     }
     
     @PostMapping
-    public Recipe createRecipe(@RequestBody Recipe recipe) {
-        return recipeRepository.save(recipe);
+    public ResponseEntity<List<Recipe>> createRecipe(@RequestBody Recipe recipe) {
+        recipeRepository.save(recipe);
+        return getAllRecipes();
     }
     
-    // @PutMapping("/{id}")
-    // public Recipe updateRecipe(@PathVariable long id, @RequestBody Recipe newRecipe) {
-    //     return recipeRepository.findById(id)
-    //             .map(recipe -> {
-    //                 recipe.setRecipeName(newRecipe.getRecipeName());
-    //                 recipe.setIngredients(newRecipe.getIngredients());
-    //                 recipe.setRatings(newRecipe.getRatings());
-    //                 return recipeRepository.save(recipe);
-    //             })
-    //             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Recipe not found"));
-    // }
+ 
     
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteRecipe(@PathVariable long id) {
-        recipeRepository.deleteById(id);
+    public ResponseEntity<String> deleteRecipe(@PathVariable long recipeId) {
+        recipeRepository.deleteById(recipeId);
+        return ResponseEntity.ok("Recipe successfully deleted");
     }
 }

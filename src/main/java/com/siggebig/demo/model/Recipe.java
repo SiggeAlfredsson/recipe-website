@@ -1,6 +1,8 @@
 package com.siggebig.demo.model;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,14 +19,16 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
     private String recipeName;
 
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    private List<Ingredient> ingredients;
+    private int portions;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    private List<Rating> ratings;
+    @JsonIgnoreProperties("recipe")
+    private List<Ingredient> ingredients;
+
+    // @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    // private List<Rating> ratings;
 
 
     
