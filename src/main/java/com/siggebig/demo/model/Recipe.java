@@ -23,12 +23,19 @@ public class Recipe {
 
     private int portions;
 
+    private String description;
+
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("recipe")
     private List<Ingredient> ingredients;
 
-    // @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    // private List<Rating> ratings;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("recipe")
+    private List<Instruction> instructions;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("recipe")
+    private List<Review> reviews;
 
 
     
