@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="recipe-app.js" defer></script>
+    <link rel="stylesheet" href="recipe-style.css">
+    <title id="title"></title>
+</head>
+<body>
+    <header>
+    <h1><span id="recipe-name">Db down?</span></h1>
+    </header>
+    
+    <main>
+        <article>
+
+            <div>
+                <p id="recipe-description"></p>
+            </div>
+
+            <section>
+                <h2>Ingredients</h2>
+                <ul id="ingredient-list"></ul>
+            </section>
+
+            <section>
+                <h2>Instructions</h2>
+                <ol id="instruction-list"></ol>
+            </section>
+
+            <section>
+                <h2>Reviews</h2>
+                <ul id="review-list"></ul>
+            </section>
+
+            <section>
+                <h2>Add a review</h2>
+                <form id="review-form">
+                    <label for="review-text">Enter review:</label>
+                    <textarea id="review-text"></textarea>
+                    <button id="btn" type="submit">Send</button>
+                </form>
+            </section>
+
+        </article>
+    </main>
+</body>
+</html>
