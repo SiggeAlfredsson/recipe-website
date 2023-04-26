@@ -34,6 +34,9 @@ fetch("http://localhost:8080/recipes/"+recipeId)
     const descriptionString = document.getElementById("recipe-description");
     descriptionString.textContent = recipe.description;
 
+    const image = document.getElementById("id-img");
+    image.src = "http://localhost:8080/recipes/image/"+recipe.id;
+
 
     const ingredientList = document.getElementById("ingredient-list");
     recipe.ingredients.forEach(ingredient => {
