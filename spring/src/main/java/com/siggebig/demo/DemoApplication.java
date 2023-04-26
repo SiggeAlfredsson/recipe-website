@@ -3,16 +3,27 @@ package com.siggebig.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.StreamUtils;
+import org.springframework.util.ResourceUtils;
 
 import com.siggebig.demo.model.Ingredient;
 import com.siggebig.demo.model.Instruction;
 import com.siggebig.demo.model.Recipe;
 import com.siggebig.demo.model.Review;
 import com.siggebig.demo.repository.RecipeRepository;
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import org.apache.commons.io.IOUtils;
+
 
 @SpringBootApplication
 public class DemoApplication {
@@ -155,6 +166,24 @@ public class DemoApplication {
 			reviews2.add(review3);
 			reviews2.add(review4);
 			swedishPancakes.setReviews(reviews2);
+
+
+			// InputStream inputStream = this.getClass() // fick det inte att funka :(
+			// 	.getClassLoader()
+			// 	.getResourceAsStream("images/swepancake.jpg");
+
+			// if(inputStream == null) {
+			// 		System.out.println("Unable to get resources");
+			// }
+			
+			// swedishPancakes.setPhoto(IOUtils.toByteArray(inputStream));
+
+
+    
+
+
+
+			
 
 			recipeRepository.save(swedishPancakes);
 

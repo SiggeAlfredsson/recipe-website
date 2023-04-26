@@ -1,10 +1,16 @@
 package com.siggebig.demo.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,6 +65,16 @@ public class RecipeController {
 
         return "Review added";
     } 
+
+    @GetMapping("/image/{recipeId}")
+    public ResponseEntity<byte[]> uploadImage(@PathVariable long recipeId) throws IOException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("images/image"+recipeId+".jpg").getFile());
+        byte[] fileContent = Files.readAllBytes(file.toPath()); //få detta funka med LOB ??
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_JPEG);
+        return new ResponseEntity<>(fileContent, headers, HttpStatus.OK);
+    }
     
     // @PostMapping
     // public ResponseEntity<List<Recipe>> createRecipe(@RequestBody Recipe recipe) {

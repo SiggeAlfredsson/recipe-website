@@ -25,6 +25,10 @@ public class Recipe {
 
     private String description;
 
+    // @Lob
+    // @Column(name = "photo", columnDefinition="BLOB") // Fick inte att funka :/
+    // private byte[] photo;
+
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("recipe")
     private List<Ingredient> ingredients;
