@@ -1,1 +1,1 @@
-Old Telephone recipe website with spring back-end.
+Old Telephone recipe website with spring backend
