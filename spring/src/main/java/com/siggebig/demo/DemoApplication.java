@@ -66,29 +66,69 @@ public class DemoApplication {
 
 			Ingredient pasta = new Ingredient();
 			pasta.setName("Pasta of choice");
-			pasta.setQuantity(250.0);
+			pasta.setQuantity(800);
 			pasta.setMeasure("grams");
 			pasta.setRecipe(spaghettiBolognese);
 
 			Ingredient groundBeef = new Ingredient();
 			groundBeef.setName("Ground beef");
-			groundBeef.setQuantity(500.0);
+			groundBeef.setQuantity(500);
 			groundBeef.setMeasure("grams");
 			groundBeef.setRecipe(spaghettiBolognese);
 
+			Ingredient oil = new Ingredient();
+			oil.setName("Oil");
+			oil.setRecipe(spaghettiBolognese);
+
+			Ingredient tomatoPure = new Ingredient();
+			tomatoPure.setName("Tomato puree");
+			tomatoPure.setQuantity(1.5);
+			tomatoPure.setMeasure("dl");
+			tomatoPure.setRecipe(spaghettiBolognese);
+		
+			Ingredient crushedTomatoes = new Ingredient();
+			crushedTomatoes.setName("Crushed tomatoes");
+			crushedTomatoes.setQuantity(500);
+			crushedTomatoes.setMeasure("grams");
+			crushedTomatoes.setRecipe(spaghettiBolognese);
+
+			Ingredient soy = new Ingredient();
+			soy.setName("Chinese Soy");
+			soy.setQuantity(2);
+			soy.setMeasure("tbsp");
+			soy.setRecipe(spaghettiBolognese);
+
+			Ingredient carrot = new Ingredient();
+			carrot.setName("Carrots");
+			carrot.setQuantity(2);
+			carrot.setRecipe(spaghettiBolognese);
+
+			Ingredient chickenBroth = new Ingredient();
+			chickenBroth.setName("Chicken broth");
+			chickenBroth.setQuantity(2);
+			chickenBroth.setMeasure("dl");
+			chickenBroth.setRecipe(spaghettiBolognese);
+		
 			List<Ingredient> spaghettiBologneseIngredients = new ArrayList<>();
 			spaghettiBologneseIngredients.add(pasta);
 			spaghettiBologneseIngredients.add(groundBeef);
+			spaghettiBologneseIngredients.add(tomatoPure);
+			spaghettiBologneseIngredients.add(crushedTomatoes);
+			spaghettiBologneseIngredients.add(chickenBroth);
+			spaghettiBologneseIngredients.add(soy);
+			spaghettiBologneseIngredients.add(carrot);
+			spaghettiBologneseIngredients.add(oil);
+
 
 			spaghettiBolognese.setIngredients(spaghettiBologneseIngredients);
 
 			Review review1 = new Review();
-			review1.setComment("Best recipe ever !!");
-			review1.setRating(5);
+			review1.setComment("Bussin recipe!!");
+			review1.setRating(4);
 			review1.setRecipe(spaghettiBolognese);
 			Review review2 = new Review();
-			review2.setComment("It is indeed bussin!");
-			review2.setRating(4);
+			review2.setComment("Who even needs onions?!!?");
+			review2.setRating(5);
 			review2.setRecipe(spaghettiBolognese);
 
 			List<Review> reviews = new ArrayList<>();
