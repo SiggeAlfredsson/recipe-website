@@ -35,13 +35,21 @@ let rating = 0;
     recipe.ingredients.forEach(ingredient => {
       const listItem = document.createElement("li");
 
+     
+
       let t = ingredient.quantity / recipe.portions * portion
 
+    
       listItem.textContent = t + " " + ingredient.measure + " " + ingredient.name;
-
-
+    
       if (ingredient.measure === null) {
-        listItem.textContent = ingredient.quantity + " " + ingredient.name;
+          if (t % 1 !== 0) { // runda ner om ojämnt
+            t = Math.floor(t);
+          }
+          if (t ==0){
+            t=1;
+          }
+          listItem.textContent = t + " " + ingredient.name; 
       } 
 
       if (ingredient.quantity === 0) {
@@ -49,7 +57,7 @@ let rating = 0;
       }
 
       ingredientList.appendChild(listItem);
-
+      
     });
   
   }
