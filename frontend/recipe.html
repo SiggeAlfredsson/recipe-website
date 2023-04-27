@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="recipe-app.js" defer></script>
     <link rel="stylesheet" href="recipe-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />     <!-- star icons -->
+ 
     <title id="title"></title>
 </head>
 <body>
@@ -22,9 +24,14 @@
                 <p id="recipe-description"></p>
             </div>
 
-            <div>
+            <div class="img">
                 <img  id="id-img" src="" alt="">
             </div>
+
+            <div id="portion-numb">
+                <label for="portion">Enter a portion number:</label>
+                <input type="number" id="portion" name="portion" min="1"  step="1" oninput="calculate()">
+              </div>
 
             <section>
                 <h2>Ingredients</h2>
@@ -38,14 +45,20 @@
 
             <section>
                 <h2>Reviews</h2>
-                <ul id="review-list"></ul>
+                <ul class="review-list" id="review-list"></ul>
             </section>
 
             <section>
                 <h2>Add a review</h2>
                 <form id="review-form">
-                    <label for="review-text">Enter review:</label>
-                    <textarea id="review-text"></textarea>
+                    <textarea id="review-text" placeholder="Enter review..." ></textarea>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
                     <button id="btn" type="submit">Send</button>
                 </form>
             </section>

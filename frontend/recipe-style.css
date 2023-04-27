@@ -1,0 +1,159 @@
+/* Kör samma theme här Theme https://www.schemecolor.com/old-telephone.php  */
+
+*{
+    text-decoration: none;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    color: #FED440;
+}
+
+body {
+    background-color: #FED440;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+div img {
+    display: block;
+    margin: 0 auto;
+
+    width: 100%;
+
+}
+
+#recipe-description{
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 0px;
+    font-size: 20px;
+}
+
+
+header {
+    margin: 10px;
+    padding: 0;
+    background-color: #090703;
+    color: #FED440;
+    text-align: center;
+  }
+
+main {    
+    width: 80%;
+    background-color: #090703;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+article {
+    max-width: 800px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+img {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+}
+
+section {
+    margin: 20px 0;
+}
+
+section h2 {
+    margin: 10px;
+}
+
+
+ul, ol {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 100px;
+    color: #090703;
+
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    background-color: #FED440;
+
+    margin: 10px;
+}
+
+.review-list li:nth-child(even) {
+    background-color: #ad922f;
+    color: black;
+}
+
+.review-list li{
+    margin: 0;
+    list-style: none;
+    background-color: #FED440;
+}
+
+.review-list p{
+   font-size: 18px;
+   color: black;
+}
+
+
+
+.stars i {
+    margin: 20px;
+    color: #e6e6e6;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  } 
+  
+  .stars i.active {
+    color: #ff9c1a;
+  }
+
+  
+  #btn {
+    background-color: #FED440;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  
+  #btn:hover{
+    background-color: #ad922f;
+  }
+
+  #portion {
+    width: 30px;
+    color: black;
+    background-color:#FED440;
+  }
+
+
+  

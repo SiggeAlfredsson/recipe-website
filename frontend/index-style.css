@@ -2,6 +2,7 @@
 
 * {
   text-decoration: none;
+  font-family: Arial;
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
@@ -39,8 +40,6 @@ nav img {
 
 
 nav h2{
-
-  
 
   border-bottom: 1px solid #FED440;
   width: 100%;
@@ -83,8 +82,6 @@ nav ul {
   justify-content: center;
 
   /* margin: 20px; */
-
-  background-color: whie;
 
 }
 

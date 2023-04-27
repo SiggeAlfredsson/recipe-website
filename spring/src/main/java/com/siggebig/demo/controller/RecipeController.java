@@ -48,8 +48,8 @@ public class RecipeController {
         return recipeRepository.findById(id);
     }
 
-    @PostMapping("/review/{recipeId}/{reviewComment}") // Requestbody bättre?
-    public String addReview(@PathVariable long recipeId, @PathVariable String reviewComment) {
+    @PostMapping("/review/{recipeId}/{reviewComment}/{rating}") // Requestbody bättre?
+    public String addReview(@PathVariable long recipeId, @PathVariable String reviewComment, @PathVariable int rating) {
 
         Recipe recipe = recipeRepository.getReferenceById(recipeId);
 
@@ -57,6 +57,9 @@ public class RecipeController {
 
         Review review = new Review(); // nasty lösning, förbättra?
         review.setComment(reviewComment);
+        if(rating!=0){
+            review.setRating(rating);
+        }
         review.setRecipe(recipe);
         List<Review> reviews = new ArrayList<>();
         reviews.add(review); 

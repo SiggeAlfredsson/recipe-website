@@ -84,9 +84,11 @@ public class DemoApplication {
 
 			Review review1 = new Review();
 			review1.setComment("Best recipe ever !!");
+			review1.setRating(5);
 			review1.setRecipe(spaghettiBolognese);
 			Review review2 = new Review();
 			review2.setComment("It is indeed bussin!");
+			review2.setRating(4);
 			review2.setRecipe(spaghettiBolognese);
 
 			List<Review> reviews = new ArrayList<>();
@@ -157,9 +159,11 @@ public class DemoApplication {
 
 			Review review3 = new Review();
 			review3.setComment("I love swedish pancakes!! its da best !!");
+			review3.setRating(4);
 			review3.setRecipe(swedishPancakes);
 			Review review4 = new Review();
 			review4.setComment("Taste great with a little bit of sugar in the battern!");
+			review4.setRating(3);
 			review4.setRecipe(swedishPancakes);
 
 			List<Review> reviews2 = new ArrayList<>();
@@ -177,8 +181,6 @@ public class DemoApplication {
 			// }
 			
 			// swedishPancakes.setPhoto(IOUtils.toByteArray(inputStream));
-
-
     
 
 
